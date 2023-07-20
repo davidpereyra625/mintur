@@ -37,6 +37,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
                 
             Route::middleware('web','auth')
+                ->prefix('admin')
+                // si se agrega el prefix, esto nos facilita que en el routes/admin no tengamos que poner en la ruta el admin
                 ->group(base_path('routes/admin.php'));
         });
     }
